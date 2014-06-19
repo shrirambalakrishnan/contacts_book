@@ -1,5 +1,4 @@
 class ContactsController < ApplicationController
-	$path
 	def new
 		@contact=Contact.new
 	end
@@ -7,6 +6,12 @@ class ContactsController < ApplicationController
 	def create
 		@contact=Contact.create(contact_params)
 		if @contact.save
+			name=params[:contact][:photo].original_filename
+			directory="public/data"
+			path=File.join(directory,name)
+			File.open(path, "wb") { |f| f.write(params[:contact][:photo].read) }
+			@contact1=Contact.find(@contact.id)
+			@contact1.update(:image_location => name)
 			redirect_to @contact
 		else
 			render 'new'
