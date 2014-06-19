@@ -1,0 +1,8 @@
+<h1> List of all contacts  </h1>
+<% @contacts.each do |x| %>
+	<%=x.firstname%> <%=x.lastname%> | <%=x.email%> | <%=x.mobile %> | <%= x.address %>
+	<%= link_to "Show",contact_path(x) %>
+	<%= link_to "Edit",edit_contact_path(x) %>
+	<%= link_to "Delete",contact_path(x), method: :delete %>
+	<br/>
+<% end %>
