@@ -1,7 +1,10 @@
 <h1> Contact : </h1>
-Name: <%=@contact.firstname %> <%= @contact.lastname %><br/>
-Email ID: <%= @contact.email %><br/>
-Mobile Number: <%= @contact.mobile %><br/>
-Address :<%= @contact.address %><br/>
-Image location : "<%= @contact.image_location %>"<br/>
-Your pic: <img src="/data/<%= @contact.image_location %>">
+<table>
+<tr><td>Name:</td> <td><%=@contact.firstname %> <%= @contact.lastname %></td></tr>
+<tr><td>Email ID</td> <td><%= @contact.email %></td></tr>
+<tr><td>Mobile Number</td> <td><%= @contact.mobile %></td></tr>
+<tr><td>Address </td> <td><%= @contact.address %></td></tr>
+<tr><td>Image location</td> <td> "<%= @contact.image_location %>"</td></tr>
+</table>
+Your pic: <br/>
+<img src="/data/<%= @contact.image_location %>">

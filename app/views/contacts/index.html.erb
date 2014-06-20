@@ -1,8 +1,13 @@
 <h1> List of all contacts  </h1>
+<table>
 <% @contacts.each do |x| %>
-	<%=x.firstname%> <%=x.lastname%> | <%=x.email%> | <%=x.mobile %> | <%= x.address %>
-	<%= link_to "Show",contact_path(x) %>
-	<%= link_to "Edit",edit_contact_path(x) %>
-	<%= link_to "Delete",contact_path(x), method: :delete %>
-	<br/>
+	<tr>
+	<td><%=x.firstname%> <%=x.lastname%> </td> 
+	<td><%=x.email%> </td>
+	<td><%=x.mobile %> </td>
+	<td><%= x.address %> </td>
+	<td><%= link_to "Show",contact_path(x) %></td>
+	<td><%= link_to "Edit",edit_contact_path(x) %></td>
+	<td><%= link_to "Delete",contact_path(x), method: :delete %></td>
+	</tr>
 <% end %>
