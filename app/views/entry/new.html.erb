@@ -1,0 +1,10 @@
+<h1> LOG - IN </h1>
+<%= form_for :user,url: { action: "check"} do |f|%>
+<%= f.label :UserName %>
+<%= f.text_field :username %>
+<%= f.label :Password %>
+<%= f.password_field :password %>
+<%= f.submit %>
+<% end %>
+
+<%= link_to "New User? Sign Up", url: {controller: "users",action: "new"} %>

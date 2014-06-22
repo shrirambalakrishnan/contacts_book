@@ -7,5 +7,4 @@
 <!--<tr><td>Image location</td> <td> "<%= @contact.image_location %>"</td></tr> -->
 </table>
 Your pic: <br/>
-<img src="/data/<%= @contact.image_location %>" width=480px height=640px>
-<%= link_to "Back to list", contacts_path %>
+<img src="/data/<%= @contact.image_location %>" width=240px height=320px>

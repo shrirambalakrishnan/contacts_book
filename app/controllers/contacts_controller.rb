@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
 		@contact=Contact.create(contact_params)
 		@name=savePhoto
 		@contact.image_location=@name
+		@contact.userid=session[:id]
 		if @contact.save
 			redirect_to @contact
 		else
@@ -21,7 +22,8 @@ class ContactsController < ApplicationController
 	end
 
 	def index
-		@contacts=Contact.all
+		@contacts=Contact.where("userid=?", session[:id])
+		#byebug
 	end
 
 	def destroy
